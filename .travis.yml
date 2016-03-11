@@ -1,0 +1,11 @@
+language: objective-c
+osx_image: xcode7.2
+
+before_install:
+  - npm install -g appium
+before_script:
+  - chmod +x instruments-auth.sh
+  - ./instruments-auth.sh
+  - appium &
+script:
+  - ./gradlew clean test
